@@ -33,10 +33,12 @@ export class BasicPageComponent implements OnInit{
 
   onSave(): void {
     if(this.myForm.invalid)return;
+    this.myForm.markAllAsTouched();
+    return;
     console.log(this.myForm.value);
   }
 
   ngOnInit(): void {
-    this.myForm.reset(RTX5090);
+    // this.myForm.reset(RTX5090);
   }
 }
