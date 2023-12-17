@@ -36,6 +36,44 @@ export class DynamicPageComponent {
     }
 
 
+    /*lo copio de basic-page.component.ts ambos metodos*/
+    isValidField( field: string ): boolean | null {
+      return this.myForm.controls[field].errors
+        && this.myForm.controls[field].touched;
+    }
+    getFieldError( field: string ): string | null {
+
+      if ( !this.myForm.controls[field] ) return null;
+
+      const errors = this.myForm.controls[field].errors || {};
+
+      for (const key of Object.keys(errors) ) {
+        switch( key ) {
+          case 'required':
+            return 'Este campo es requerido';
+
+          case 'minlength':
+            return `Mínimo ${ errors['minlength'].requiredLength } caracters.`;
+        }
+      }
+
+      return null;
+    }
+/**/
+    /**este se creo para validar los arrays */
+    isValidFieldInArray(formArray: FormArray, index: number){
+      return formArray.controls[index].errors
+          && formArray.controls[index].touched;
+    }
+
+
+    onDeleteFavorite( index:number ):void {
+      this.favoriteGames.removeAt(index);
+    }
+
+
+
+
+
+
   }
-
-
