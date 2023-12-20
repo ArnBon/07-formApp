@@ -12,7 +12,7 @@
                 <div class="col-sm-9">
                     <input type="text"
                            class="form-control"
-formControlname="name"
+formControlName="name"
                            placeholder="Nombre del usuario">
 
                     <span class="form-text text-danger">
@@ -27,7 +27,7 @@ formControlname="name"
                 <div class="col-sm-9">
                     <input type="email"
                            class="form-control"
-formControlname="email"
+formControlName="email"
                            placeholder="Email del usuario">
                     <span class="form-text text-danger">
                         mensaje de error del email
@@ -41,9 +41,9 @@ formControlname="email"
                 <div class="col-sm-9">
                     <input type="text"
                            class="form-control"
-formControlname="username"
+formControlName="username"
                            placeholder="Nombre código del usuario">
-                    <span class="form-text text-danger">
+                    <span  class="form-text text-danger">
                          El username no puede ser Strider
                     </span>
                 </div>
@@ -55,7 +55,7 @@ formControlname="username"
                 <div class="col-sm-9">
                     <input type="password"
                            class="form-control"
-formControlname="password"
+formControlName="password"
                            placeholder="Password de su cuenta">
 
                     <span class="form-text text-danger">
@@ -70,10 +70,10 @@ formControlname="password"
                 <div class="col-sm-9">
                     <input type="password"
                            class="form-control"
-formControlname="password2"
+formControlName="password2"
                            placeholder="Confirmar la contraseña">
 
-                    <span class="form-text text-danger">
+                    <span  class="form-text text-danger">
                          Las contraseñas deben de ser iguales
                     </span>
                 </div>
@@ -108,11 +108,11 @@ formControlname="password2"
 <pre>{{ myForm.value.email | json }}</pre>
 
 <h5>Username</h5>
-<pre>{{ myForm.value.username | json }}</pre>
+<pre>{{ myForm.controls['username'].errors | json }}</pre>
 
 
 <h5>Password</h5>
 <pre>{{ myForm.value.password | json }}</pre>
 
 <h5>Confirmar</h5>
-<pre>{{ myForm.value.password | json }}</pre>
+<pre>{{ myForm.value.password2 | json }}</pre>
